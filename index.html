@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Countr Support - Help and FAQ for the strategic counting game for iOS">
+    <title>Countr - Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5856D6;
+            --success-color: #34C759;
+            --warning-color: #FF9500;
+            --danger-color: #FF3B30;
+            --background: #F2F2F7;
+            --card-background: #FFFFFF;
+            --text-primary: #000000;
+            --text-secondary: #3C3C43;
+            --text-tertiary: #8E8E93;
+            --border-color: #C6C6C8;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #000000;
+                --card-background: #1C1C1E;
+                --text-primary: #FFFFFF;
+                --text-secondary: #EBEBF5;
+                --text-tertiary: #8E8E93;
+                --border-color: #38383A;
+                --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+
+        .app-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background: var(--card-background);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .emoji {
+            font-size: 24px;
+        }
+
+        .rule-list,
+        .step-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .rule-list li,
+        .step-list li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: var(--background);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .step-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .badge-blue {
+            background: rgba(0, 122, 255, 0.15);
+            color: var(--primary-color);
+        }
+
+        .badge-purple {
+            background: rgba(88, 86, 214, 0.15);
+            color: var(--secondary-color);
+        }
+
+        .badge-green {
+            background: rgba(52, 199, 89, 0.15);
+            color: var(--success-color);
+        }
+
+        .badge-orange {
+            background: rgba(255, 149, 0, 0.15);
+            color: var(--warning-color);
+        }
+
+        .info-box {
+            background: rgba(0, 122, 255, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .email-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 24px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .email-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-tertiary);
+            font-size: 14px;
+        }
+
+        .version-history {
+            margin: 20px 0;
+        }
+
+        .version {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--background);
+            border-radius: 12px;
+        }
+
+        .version-number {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .version-features {
+            list-style: none;
+            color: var(--text-secondary);
+        }
+
+        .version-features li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .version-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 10px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        .troubleshooting-steps {
+            list-style: decimal;
+            padding-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        .troubleshooting-steps li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="app-icon">🎮</div>
+            <h1>Countr</h1>
+            <p class="tagline">Support & Help Center</p>
+            <div>
+                <span class="badge badge-blue">iOS 15.0+</span>
+                <span class="badge badge-purple">Version 2.0</span>
+                <span class="badge badge-green">Free</span>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section class="section">
+            <h2><span class="emoji">📱</span> About Countr</h2>
+            <p><strong>Countr</strong> is a strategic turn-based multiplayer game where players take turns incrementing a shared counter, with the goal of being the player who reaches a randomly-generated target number. Each player has a limited number of steps (taps) per turn, adding strategic depth to the gameplay.</p>
+            <p><strong>Developer:</strong> Prayudi Satriyo<br>
+            <strong>Version:</strong> 2.0<br>
+            <strong>Requires:</strong> iOS 15.0 or later</p>
+        </section>
+
+        <!-- How to Play Section -->
+        <section class="section">
+            <h2><span class="emoji">🎮</span> How to Play</h2>
+
+            <h3>Objective</h3>
+            <p>Be the player who reaches the target count!</p>
+
+            <h3>Game Rules</h3>
+            <ol class="step-list">
+                <li>
+                    <span class="step-number">1</span>
+                    <div>
+                        <strong>Take Turns</strong><br>
+                        Players alternate trying to reach the target
+                    </div>
+                </li>
+                <li>
+                    <span class="step-number">2</span>
+                    <div>
+                        <strong>Tap 'Go!'</strong><br>
+                        Increment the counter by 1 (each tap uses one step)
+                    </div>
+                </li>
+                <li>
+                    <span class="step-number">3</span>
+                    <div>
+                        <strong>Watch Your Steps</strong><br>
+                        Each turn has 3-5 random steps you can use
+                    </div>
+                </li>
+                <li>
+                    <span class="step-number">4</span>
+                    <div>
+                        <strong>Switch Players</strong><br>
+                        Tap 'Switch!' to pass your turn (requires at least 1 step taken)
+                    </div>
+                </li>
+                <li>
+                    <span class="step-number">5</span>
+                    <div>
+                        <strong>Reach the Target</strong><br>
+                        The player who hits the randomly-generated target (10-25) wins!
+                    </div>
+                </li>
+            </ol>
+
+            <div class="info-box">
+                <strong>💡 Strategy Tips</strong>
+                <ul class="rule-list">
+                    <li>Count ahead to see if you can win on your current turn</li>
+                    <li>Force your opponent into positions where they can't win</li>
+                    <li>Save steps for crucial moments</li>
+                    <li>Watch the math - if remaining count matches your steps, go for it!</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <h2><span class="emoji">❓</span> Frequently Asked Questions</h2>
+
+            <h3>General Questions</h3>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: How many players can play?</div>
+                <div class="faq-answer">A: Countr supports 2-6 players in a single game.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I customize players?</div>
+                <div class="faq-answer">A: Yes! You can customize each player's name, emoji/character, and color.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Is there a tutorial in the app?</div>
+                <div class="faq-answer">A: Yes! Tap the "About" or "How to Play" button in the app for detailed instructions and rules.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Is an internet connection required?</div>
+                <div class="faq-answer">A: No. Countr is a local multiplayer game that works completely offline.</div>
+            </div>
+
+            <h3>Technical Questions</h3>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Why isn't sound playing?</div>
+                <div class="faq-answer">A: Check that your device is not in silent mode. Countr includes both sound effects and haptic feedback. If sounds don't play, haptic feedback will still provide tactile responses.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: The app isn't responding. What should I do?</div>
+                <div class="faq-answer">A: Try force-closing the app and reopening it. If problems persist, restart your device.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: What iOS version do I need?</div>
+                <div class="faq-answer">A: Countr requires iOS 15.0 or later.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Does Countr support Dark Mode?</div>
+                <div class="faq-answer">A: Yes! Countr automatically adapts to your device's appearance settings.</div>
+            </div>
+
+            <h3>Gameplay Questions</h3>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Why can't I switch players?</div>
+                <div class="faq-answer">A: You must take at least one step (tap "Go!" at least once) before you can switch to the next player.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: What happens if I use all my steps?</div>
+                <div class="faq-answer">A: The turn automatically ends and switches to the next player.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I restart a game?</div>
+                <div class="faq-answer">A: Yes! Look for the "New Game" or restart option in the game interface.</div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section class="section">
+            <h2><span class="emoji">🔧</span> Troubleshooting</h2>
+
+            <h3>App Crashes or Freezes</h3>
+            <ol class="troubleshooting-steps">
+                <li>Force close the app</li>
+                <li>Restart your device</li>
+                <li>Ensure you're running the latest version of iOS</li>
+                <li>Reinstall the app if issues persist</li>
+            </ol>
+
+            <h3>Sound Issues</h3>
+            <ul class="rule-list">
+                <li>Check that your device is not in silent mode</li>
+                <li>Check volume settings</li>
+                <li>Haptic feedback will work even without sound</li>
+            </ul>
+
+            <h3>Display Issues</h3>
+            <ul class="rule-list">
+                <li>Ensure your iOS is up to date</li>
+                <li>Try rotating your device</li>
+                <li>Restart the app</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <div class="contact-box">
+            <h3>📧 Contact Support</h3>
+            <p>Need help? We're here for you!</p>
+            <p>If you need further assistance or want to report a bug, please contact us.</p>
+            <a href="mailto:support@example.com" class="email-link">support@example.com</a>
+            <p style="margin-top: 20px; font-size: 14px;">Response time: 24-48 hours</p>
+        </div>
+
+        <section class="section">
+            <h3>When contacting support, please include:</h3>
+            <ul class="rule-list">
+                <li>Your iOS version</li>
+                <li>Device model (iPhone, iPad)</li>
+                <li>Description of the issue</li>
+                <li>Screenshots if applicable</li>
+            </ul>
+        </section>
+
+        <!-- Privacy Section -->
+        <section class="section">
+            <h2><span class="emoji">🔒</span> Privacy</h2>
+            <p>Countr does not collect, store, or transmit any personal data. All game data remains on your device. No internet connection is required, and no analytics or tracking is performed.</p>
+            <p><strong>Your privacy is our priority.</strong> We believe in creating great gaming experiences without compromising your privacy.</p>
+        </section>
+
+        <!-- Feature Requests Section -->
+        <section class="section">
+            <h2><span class="emoji">📝</span> Feature Requests</h2>
+            <p>We're always looking to improve Countr! If you have suggestions for new features or improvements, please contact us via email. We read and consider every suggestion.</p>
+        </section>
+
+        <!-- Version History Section -->
+        <section class="section">
+            <h2><span class="emoji">⭐</span> Version History</h2>
+
+            <div class="version-history">
+                <div class="version">
+                    <div class="version-number">Version 2.0 (2025)</div>
+                    <ul class="version-features">
+                        <li>Complete SwiftUI modernization</li>
+                        <li>Player customization (names, emojis, colors)</li>
+                        <li>Enhanced animations and confetti celebrations</li>
+                        <li>Haptic feedback system</li>
+                        <li>Audio manager with sound effects</li>
+                        <li>About/How to Play screen</li>
+                        <li>Modern UI design with gradients</li>
+                        <li>MVVM architecture implementation</li>
+                    </ul>
+                </div>
+
+                <div class="version">
+                    <div class="version-number">Version 1.0 (2019)</div>
+                    <ul class="version-features">
+                        <li>Original UIKit version</li>
+                        <li>Basic counting game mechanics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credits Section -->
+        <section class="section">
+            <h2><span class="emoji">🙏</span> Credits</h2>
+            <p><strong>Original Game:</strong> Created by Prayudi Satriyo (2019)<br>
+            <strong>Modernization:</strong> Updated to Swift 5.9+ and SwiftUI (2025)<br>
+            <strong>Architecture:</strong> MVVM with Combine<br>
+            <strong>Design:</strong> Modern iOS design language</p>
+        </section>
+
+        <footer>
+            <p><strong>Thank you for playing Countr!</strong> 🎮</p>
+            <p>Last Updated: January 2025</p>
+            <p style="margin-top: 20px;">Built with ❤️ to teach modern iOS development</p>
+        </footer>
+    </div>
+</body>
+</html>
